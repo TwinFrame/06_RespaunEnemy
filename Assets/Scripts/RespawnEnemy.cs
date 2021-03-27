@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Transform))]
+
 public class RespawnEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject _enemy;
@@ -28,6 +29,8 @@ public class RespawnEnemy : MonoBehaviour
 
     private IEnumerator CreatingEnemiesByPoints(Transform[] _points)
     {
+        _currentPoint = 0;
+
         while (true)
         {
             Instantiate(_enemy, _points[_currentPoint].transform.position, Quaternion.identity);
@@ -41,7 +44,5 @@ public class RespawnEnemy : MonoBehaviour
 
             yield return new WaitForSecondsRealtime(_durationRespawn);
         }
-
-
     }
 }

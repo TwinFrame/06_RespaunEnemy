@@ -296,6 +296,8 @@ GameObject:
   - component: {fileID: 1852139378115923775}
   - component: {fileID: 8889625057730415747}
   - component: {fileID: 2022554266014248224}
+  - component: {fileID: -2976171855766343247}
+  - component: {fileID: 5817139557930402973}
   m_Layer: 0
   m_Name: Humster
   m_TagString: Humster
@@ -569,6 +571,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc657b4dd6515a4a9533a2f4b57e84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onFalling:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2976171855766343247}
+        m_TargetAssemblyTypeName: PlayingHumsterSamples, Assembly-CSharp
+        m_MethodName: PlayHunsterClip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &2022554266014248224
 AudioSource:
   m_ObjectHideFlags: 0
@@ -579,9 +596,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: b1000e721741fcf4088f438078da7e3e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.551
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -665,3 +682,48 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2976171855766343247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554052978303159202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c62bf0f0b47f65d47879cedb67c4a922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _yeahClips:
+  - {fileID: 8300000, guid: fa30625c01502ba4ab6f2ce541c5e25f, type: 3}
+  - {fileID: 8300000, guid: 86de1026f4fd2c347ad933642543128e, type: 3}
+  - {fileID: 8300000, guid: b1000e721741fcf4088f438078da7e3e, type: 3}
+  - {fileID: 8300000, guid: 96b56bbdfccdcf84d99e34d02cc570a3, type: 3}
+  _screamsClips:
+  - {fileID: 8300000, guid: cf572678a160d8e44a887853dd373a29, type: 3}
+  - {fileID: 8300000, guid: bec64bbcc95fb6440a28624f93bde12b, type: 3}
+  - {fileID: 8300000, guid: 411d477b2946ed54492dac457e5ff17d, type: 3}
+  - {fileID: 8300000, guid: 86c9ef3449e6d4e40b5e1cfcf0ca79de, type: 3}
+--- !u!164 &5817139557930402973
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554052978303159202}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: -1000
+  m_RoomHF: 0
+  m_DecayTime: 1.65
+  m_DecayHFRatio: 1.5
+  m_ReflectionsLevel: -1363
+  m_ReverbLevel: -1153
+  m_ReverbDelay: 0.012
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 21
