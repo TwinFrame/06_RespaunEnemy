@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(PolygonCollider2D))]
-[RequireComponent(typeof(Collider2D))]
 
 public class FallingOutSideWheel : MonoBehaviour
 {
@@ -26,9 +25,9 @@ public class FallingOutSideWheel : MonoBehaviour
         _animator.SetBool("isFalling", false);
     }
 
-    private void OnTriggerExit2D(Collider2D _wheel)
+    private void OnTriggerExit2D(Collider2D collider)
     {
-        if (_wheel.name == "InsideWheelArea")
+        if (collider == _wheel)
         {
             _animator.SetBool("isFalling", true);
             _onFalling.Invoke();

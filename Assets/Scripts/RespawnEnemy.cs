@@ -6,43 +6,46 @@ using UnityEngine;
 
 public class RespawnEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemy;
-    [SerializeField] private float _durationRespawn;
+	[SerializeField] private GameObject _enemy;
+	[SerializeField] private float _durationRespawn;
 
-    private Transform[] _respawnPointsWithParrent;
-    private Transform[] _respawnPoints;
-    private int _currentPoint;
+	private Transform[] _respawnPointsWithParrent;
+	private Transform[] _respawnPoints;
+	private int _currentPoint;
+	private Collider2D _wheelFrame;
 
-    private void Start()
-    {
-        _respawnPointsWithParrent = GetComponentsInChildren<Transform>();
+	private void Start()
+	{
+		_wheelFrame = GameObject.FindObjectOfType<WheelFrame>().GetComponent<PolygonCollider2D>();
 
-        _respawnPoints = new Transform[_respawnPointsWithParrent.Length - 1];
+		_respawnPointsWithParrent = GetComponentsInChildren<Transform>();
 
-        for (int i = 0; i < _respawnPointsWithParrent.Length - 1; i++)
-        {
-            _respawnPoints[i] = _respawnPointsWithParrent[i + 1];
-        }
+		_respawnPoints = new Transform[_respawnPointsWithParrent.Length - 1];
 
-        var creatingEnemiesJob = StartCoroutine(CreatingEnemiesByPoints(_respawnPoints));
-    }
+		for (int i = 0; i < _respawnPointsWithParrent.Length - 1; i++)
+		{
+			_respawnPoints[i] = _respawnPointsWithParrent[i + 1];
+		}
 
-    private IEnumerator CreatingEnemiesByPoints(Transform[] _points)
-    {
-        _currentPoint = 0;
+		var creatingEnemiesJob = StartCoroutine(CreatingEnemiesByPoints(_respawnPoints));
+	}
 
-        while (true)
-        {
-            Instantiate(_enemy, _points[_currentPoint].transform.position, Quaternion.identity);
+	private IEnumerator CreatingEnemiesByPoints(Transform[] _points)
+	{
+		_currentPoint = 0;
 
-            _currentPoint++;
+		while (true)
+		{
+			Instantiate(_enemy, _points[_currentPoint].transform.position, Quaternion.identity);
 
-            if (_currentPoint >= _points.Length)
-            {
-                _currentPoint = 0;
-            }
+			_currentPoint++;
 
-            yield return new WaitForSecondsRealtime(_durationRespawn);
-        }
-    }
+			if (_currentPoint >= _points.Length)
+			{
+				_currentPoint = 0;
+			}
+
+			yield return new WaitForSecondsRealtime(_durationRespawn);
+		}
+	}
 }

@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class DestroyHumster : MonoBehaviour
 {
-    private float _deathLevelYPosition;
+    private BoxCollider2D _deathZone;
 
     private void Start()
     {
-        _deathLevelYPosition = GameObject.FindObjectOfType<DeathLinePosition>().
-            transform.position.y;
+        _deathZone = GameObject.FindObjectOfType<DeathZone>().GetComponent<BoxCollider2D>();
     }
 
-    private void FixedUpdate()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (transform.position.y <= _deathLevelYPosition)
+        if (collision == _deathZone)
         {
             Destroy(gameObject);
         }
