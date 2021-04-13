@@ -575,8 +575,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: -2976171855766343247}
-        m_TargetAssemblyTypeName: PlayingHumsterSamples, Assembly-CSharp
-        m_MethodName: PlayHunsterClip
+        m_TargetAssemblyTypeName: PlayingHumsterAudioClips, Assembly-CSharp
+        m_MethodName: PlayHumsterClip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

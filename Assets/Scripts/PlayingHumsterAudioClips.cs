@@ -19,7 +19,7 @@ public class PlayingHumsterAudioClips : MonoBehaviour
         PlayClip(_yeahClips);
     }
 
-    public void PlayHunsterClip()
+    public void PlayHumsterClip()
     {
         PlayClip(_screamsClips, 0.9f);
     }
