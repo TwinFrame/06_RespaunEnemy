@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 5673781007975098822}
   - component: {fileID: 5673781007975098821}
   - component: {fileID: 5673781007975098820}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 5673781008380817299}
   - component: {fileID: 5673781008380817297}
   - component: {fileID: 5673781008380817296}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5673781008448189416}
   - component: {fileID: 5673781008448189423}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RadialThinLines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 5673781009078679962}
   - component: {fileID: 5673781009078679960}
   - component: {fileID: 5673781009078679967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Doors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1135,7 +1135,7 @@ GameObject:
   - component: {fileID: 5673781009800941050}
   - component: {fileID: 5673781009800941051}
   - component: {fileID: 5673781009800941049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: InsideWheelArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}

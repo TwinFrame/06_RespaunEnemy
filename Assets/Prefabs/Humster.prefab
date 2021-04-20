@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8558550432375817724}
   - component: {fileID: 3222424050999720823}
+  - component: {fileID: 216932672516836428}
   - component: {fileID: 5814017465307818816}
   - component: {fileID: 7902348117175672850}
   - component: {fileID: 8459580374365743077}
@@ -371,6 +372,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &216932672516836428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554052978303159202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54712b8bb69bfed4c999d39ee088b9c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!95 &5814017465307818816
 Animator:
   serializedVersion: 3

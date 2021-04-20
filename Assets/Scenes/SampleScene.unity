@@ -172,6 +172,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemy: {fileID: 8554052978303159202, guid: ad5a027dfc9ab144583814beeca3361a, type: 3}
   _durationRespawn: 1
+  _filter:
+    useTriggers: 0
+    useLayerMask: 1
+    useDepth: 0
+    useOutsideDepth: 0
+    useNormalAngle: 0
+    useOutsideNormalAngle: 0
+    layerMask:
+      serializedVersion: 2
+      m_Bits: 64
+    minDepth: 0
+    maxDepth: 0
+    minNormalAngle: 0
+    maxNormalAngle: 0
 --- !u!1001 &201898889
 PrefabInstance:
   m_ObjectHideFlags: 0
