@@ -16,9 +16,12 @@ public class RespawnEnemy : MonoBehaviour
 	private Collider2D _wheelFrame;
 	private Collider2D[] _colliders = new Collider2D[1];
 	private Vector3 _offsetInstantiatePosition;
+	private WaitForSecondsRealtime _waitForSecondsRealtime;
 
 	private void Start()
 	{
+		_waitForSecondsRealtime = new WaitForSecondsRealtime(_durationRespawn);
+
 		_wheelFrame = GameObject.FindObjectOfType<WheelFrame>().GetComponent<PolygonCollider2D>();
 
 		_respawnPoints = GetComponentsInChildren<RespawnPoint>();
@@ -32,22 +35,27 @@ public class RespawnEnemy : MonoBehaviour
 
 		while (true)
 		{
-			Physics2D.OverlapBox(new Vector2(_points[_currentPoint].transform.position.x, _points[_currentPoint].transform.position.y),
-				new Vector2(0.5f, 0.5f), 0, _filter, _colliders);
+			_colliders = Physics2D.OverlapBoxAll(new Vector2(_points[_currentPoint].transform.position.x, _points[_currentPoint].transform.position.y),
+				new Vector2(0.5f, 0.5f), 0);
 
-			if (_colliders[0] == _wheelFrame)
+			foreach (var colider in _colliders)
 			{
-				if (_points[_currentPoint].transform.position.y > 0)
-					_offsetInstantiatePosition = new Vector3(0, -1f, 0);
-				else
-					_offsetInstantiatePosition = new Vector3(0, 1f, 0);
-			}
-			else
-			{
+				if (colider == _wheelFrame)
+				{
+					if (_points[_currentPoint].transform.position.y > 0)
+					{
+						_offsetInstantiatePosition = new Vector3(0, -1f, 0);
+					}
+					else
+					{
+						_offsetInstantiatePosition = new Vector3(0, 1f, 0);
+					}
+
+					break;
+				}
+
 				_offsetInstantiatePosition = new Vector3(0, 0, 0);
 			}
-
-			_colliders = new Collider2D[1];
 
 			_currentEnemy = Instantiate(_enemy, _points[_currentPoint].transform.position + _offsetInstantiatePosition, Quaternion.identity);
 
@@ -58,7 +66,7 @@ public class RespawnEnemy : MonoBehaviour
 				_currentPoint = 0;
 			}
 
-			yield return new WaitForSecondsRealtime(_durationRespawn);
+			yield return _waitForSecondsRealtime;
 		}
 	}
 }
